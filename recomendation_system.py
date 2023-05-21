@@ -23,6 +23,5 @@ def get_list_jobs(user_info: UserInfo) -> List[JobDetails]:
             vacancy_name="Data Scientist",
             description="Join our team as a Data Scientist and work on cutting-edge projects.",
         ),
-        # Add more job details as needed
     ]
     return job_list

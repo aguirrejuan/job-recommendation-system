@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Details</title>
+</head>
+<body>
+    <h1>Job Details</h1>
+    <ul>
+        {% for job in job_list %}
+        <li>
+            <h3>{{ job.vacancy_name }}</h3>
+            <p>Area: {{ job.area }}</p>
+            <p>Work Modality: {{ job.work_modality }}</p>
+            <p>Country: {{ job.country }}</p>
+            <p>City: {{ job.city }}</p>
+            <p>Remote: {{ job.remote }}</p>
+            <p>Description: {{ job.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

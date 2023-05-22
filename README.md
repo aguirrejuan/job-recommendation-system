@@ -132,3 +132,17 @@ To use the job recommendation system, follow these steps:
 }
 
 ```
+
+## Populate Chroma Database 
+
+```
+python populate_dataset.py
+```
+
+### Configuration of folders 
+ YAML file has the folder used to storage the CSV files and chroma embeddings
+ 
+```
+chroma_folder: "./datasets/chroma"
+vacantes_csv : "./datasets/vacantes.csv"
+```

@@ -1,0 +1,2 @@
+chroma_folder: "./datasets/chroma"
+vacantes_csv : "./datasets/vacantes.csv"

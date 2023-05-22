@@ -1,5 +1,5 @@
-from recomendation_system import get_list_jobs
-from json_models import UserInfo, JobDetails
+from recomendation_system.engine import get_list_jobs
+from recomendation_system.json_models import UserInfo, JobDetails
 from fastapi import FastAPI
 from typing import List
 

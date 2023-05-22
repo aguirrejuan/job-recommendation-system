@@ -2,7 +2,7 @@ import chromadb
 from chromadb.config import Settings
 import pandas as pd
 from .preprocessing_text import job_preprocessing
-
+from tqdm import tqdm 
 import yaml
 
 # Read the YAML file
@@ -37,13 +37,12 @@ def populate_chroma(collection):
         lambda x: (x[0], job_preprocessing(*x[1:])),
         axis=1)
 
-    jod_data_promt.apply(lambda x:
-                         collection.add(
-                             documents=[x[1]],
-                             metadatas=[{"source": "job"}],
-                             ids=[str(x[0])]
-                         ))
-    print(collection.count(), '#'*100)
+    for job_string in tqdm(jod_data_promt):
+        collection.add(
+                    documents=[job_string[1]],
+                    metadatas=[{"source": "job"}],
+                    ids=[str(job_string[0])]
+                         )
 
 
 def query_job_info(id_job):

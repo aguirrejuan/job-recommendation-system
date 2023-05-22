@@ -1,6 +1,20 @@
 # Job Recommendation System
-
 This repository contains a job recommendation system built with FastAPI and Chroma upon LLMs (Large Language Models). It allows users to input their information and receive personalized job recommendations based on their preferences.
+
+## Background
+
+A recommendation system typically employs techniques such as content filtering and collaborative filtering. However, it does have some drawbacks, such as the cold start problem for new users or items, as well as the challenge of maintaining an updated item catalog. To overcome these issues, large language models (LLMs) offer significant advantages in building a recommendation system. They can effectively utilize textual information about users and items in a zero-shot manner, enabling personalized and context-aware recommendations. This capability minimizes the impact of the cold start problem and enhances the overall user experience. Therefore, in this case, a recommendation system is developed using LLM.
+
+This system is built upon two main concepts or tools: LLMs for generating embeddings and a vector storage database for fast content similarity querying.
+
+
+<center>
+<figure>
+<img src='./assets/system_overview.png' width="600"> 
+<figcaption>System Overview</figcaption>
+</figure>
+</center>
+
 
 ## Installation
 
@@ -146,3 +160,18 @@ python populate_dataset.py
 chroma_folder: "./datasets/chroma"
 vacantes_csv : "./datasets/vacantes.csv"
 ```
+
+
+## Future Improvements 
+
+As for future improvements, the following suggestions can be considered:
+
+* Implement a more robust LLM: Explore and utilize advanced versions or alternative large language models to enhance the recommendation system's performance and accuracy. This can be dont with just [Chroma](https://www.trychroma.com/), [LangChaing](https://python.langchain.com/en/latest/index.html) or [LlamaIndex](https://gpt-index.readthedocs.io/en/latest/) to easy the iterations for mmultiple avalable LLMs.
+
+* Enhance text codification: Improve the encoding of text to optimize the matching process between job descriptions and user information. 
+
+* Utilize an SQL-based database for tabular data: Consider using a structured database system that supports SQL queries for efficient storage, retrieval, and manipulation of data. This can enhance the overall data management capabilities of the recommendation system. SQLite, Postgress etc.
+
+* Implement both hard and soft filters: Incorporate a combination of hard filters and soft filters. Hard filters can be implemented through SQL queries for precise and specific filtering of data. Soft filters can leverage semantic information to provide more nuanced recommendations.  
+
+* Leverage LangChain for complex data interactions: Utilize LangChain, to build intricate interactions with the recommendation system's data. For example, employ agents along with the hard and soft filtering mechanisms to enable more sophisticated and dynamic.
